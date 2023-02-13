@@ -9,6 +9,6 @@ app_service_plan = {
 }
 
 app_service_linux = {
-    app01 = {}
-    app02 = {}
+    ltldemoapp01 = {}
+    ltldemoapp02 = {}
 }
