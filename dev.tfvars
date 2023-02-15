@@ -1,10 +1,10 @@
 rg = {
-  name      = "multicloud"
+  name      = "azure-tfc"
   location  = "northcentralus"
 }
 app_service_plan = {
   name = "app-service-plan01"
-  sku_name = "F1"
+  sku_name = "S1"
   os = "Linux"
 }
 
