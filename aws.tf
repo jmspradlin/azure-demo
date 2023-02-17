@@ -112,53 +112,53 @@ module "alb" {
   ]
 }
 ####
-resource "aws_security_group" "public" {
-  name        = "allow_http_public"
-  description = "Allow HTTP inbound traffic"
-  vpc_id      = module.vpc.vpc_id
-}
-resource "aws_security_group_rule" "public_ingress_all" {
-  type              = "ingress"
-  from_port         = 80
-  to_port           = 80
-  protocol          = "tcp"
-  security_group_id = aws_security_group.public.id
-  cidr_blocks       = ["0.0.0.0/0"]
-}
-resource "aws_security_group_rule" "public_egress_HTTP" {
-  type              = "egress"
-  from_port         = 0
-  to_port           = 0
-  protocol          = "-1"
-  security_group_id = aws_security_group.public.id
-  cidr_blocks       = ["0.0.0.0/0"]
-}
-resource "aws_security_group_rule" "public_egress_ipv6" {
-  type              = "egress"
-  from_port         = 0
-  to_port           = 0
-  protocol          = "-1"
-  security_group_id = aws_security_group.public.id
-  ipv6_cidr_blocks  = ["::/0"]
-}
-resource "aws_security_group" "private" {
-  name        = "allow_http_private"
-  description = "Allow HTTP inbound traffic"
-  vpc_id      = module.vpc.vpc_id
+# resource "aws_security_group" "public" {
+#   name        = "allow_http_public"
+#   description = "Allow HTTP inbound traffic"
+#   vpc_id      = module.vpc.vpc_id
+# }
+# resource "aws_security_group_rule" "public_ingress_all" {
+#   type              = "ingress"
+#   from_port         = 80
+#   to_port           = 80
+#   protocol          = "tcp"
+#   security_group_id = aws_security_group.public.id
+#   cidr_blocks       = ["0.0.0.0/0"]
+# }
+# resource "aws_security_group_rule" "public_egress_HTTP" {
+#   type              = "egress"
+#   from_port         = 0
+#   to_port           = 0
+#   protocol          = "-1"
+#   security_group_id = aws_security_group.public.id
+#   cidr_blocks       = ["0.0.0.0/0"]
+# }
+# resource "aws_security_group_rule" "public_egress_ipv6" {
+#   type              = "egress"
+#   from_port         = 0
+#   to_port           = 0
+#   protocol          = "-1"
+#   security_group_id = aws_security_group.public.id
+#   ipv6_cidr_blocks  = ["::/0"]
+# }
+# resource "aws_security_group" "private" {
+#   name        = "allow_http_private"
+#   description = "Allow HTTP inbound traffic"
+#   vpc_id      = module.vpc.vpc_id
 
-  ingress {
-    description = "HTTP inbound"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "TCP"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+#   ingress {
+#     description = "HTTP inbound"
+#     from_port   = 80
+#     to_port     = 80
+#     protocol    = "TCP"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
 
-  egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
-}
+#   egress {
+#     from_port        = 0
+#     to_port          = 0
+#     protocol         = "-1"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
+# }
