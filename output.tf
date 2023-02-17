@@ -5,7 +5,7 @@ output "aws_lb_url" {
 #   value = azurerm_public_ip.pip.fqdn
 # }
 
-# output "random_pwd" {
-#   value = random_password.azure.result
-#   sensitive = true
-# }
+output "random_pwd" {
+  value = random_password.azure.result
+  sensitive = true
+}
