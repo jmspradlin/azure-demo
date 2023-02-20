@@ -65,9 +65,9 @@ aws_public_rules = {
 aws_private_rules = {
   ingress1 = {
     type        = "ingress"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "TCP"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress1 = {
@@ -90,6 +90,12 @@ subnets = {
   frontend = {
     address_prefixes = ["10.0.2.0/27"]
   },
+  # frontend2 = {
+  #   address_prefixes = ["10.0.2.32/27"]
+  # },
+  # frontend3 = {
+  #   address_prefixes = ["10.0.2.64/27"]
+  # },
   zone1 = {
     address_prefixes = ["10.0.3.0/27"]
   },
@@ -107,18 +113,21 @@ azure_load_balancer = {
 azure_linux_vms = {
   azure01 = {
     zone  = "zone1"
+    os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/slalom-sc-rg01/providers/Microsoft.Compute/images/linuxvmtest01"
     size  = "Standard_D2s_v3"
     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
     color = "#008AD7"
   }
   azure02 = {
     zone  = "zone2"
+    os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/linux-packer-image-rg/providers/Microsoft.Compute/images/linuxvmtest02"
     size  = "Standard_D2s_v3"
     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
     color = "#00A2ED"
   }
   azure03 = {
     zone  = "zone3"
+    os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/linux-packer-image-rg/providers/Microsoft.Compute/images/linuxvmtest03"
     size  = "Standard_D2s_v3"
     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
     color = "#FAF9F6"
@@ -137,13 +146,22 @@ nsg_rules_public = {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-  inbound = {
+  inbound1 = {
     priority                   = 101
     direction                  = "Inbound"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "80"
     source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+  inbound2 = {
+    priority                   = 102
+    direction                  = "Inbound"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "66.169.181.135"
     destination_address_prefix = "*"
   }
 }
