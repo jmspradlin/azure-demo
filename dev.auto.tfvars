@@ -2,6 +2,7 @@ rg = {
   name     = "azure-tfc"
   location = "eastus2"
 }
+env = "dev"
 # AWS resources
 # instance = {
 #   aws1 = {
