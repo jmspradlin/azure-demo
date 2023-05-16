@@ -1,7 +1,7 @@
 name: azure-deploy
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 

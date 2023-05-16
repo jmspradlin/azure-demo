@@ -1,14 +1,14 @@
 variable "env" {}
 variable "rg" {}
 
-variable "instance" {}
+# variable "instance" {}
 
-variable "aws_load_balancer" {}
+# variable "aws_load_balancer" {}
 
-variable "aws_security_groups" {}
+# variable "aws_security_groups" {}
 
-variable "aws_public_rules" {}
-variable "aws_private_rules" {}
+# variable "aws_public_rules" {}
+# variable "aws_private_rules" {}
 
 # Azure Resources
 variable "vnet" {}
