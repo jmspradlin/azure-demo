@@ -132,7 +132,7 @@ azure_linux_vms = {
 #     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
 #     color = "#FAF9F6"
 #   }
-# }
+}
 nsg = {
   name = "testnsg01"
 }
