@@ -1,5 +1,6 @@
 resource "azurerm_resource_group" "rg01" {
   name = var.rg_name
+  location = var.rg_location
 }
 
 resource "random_string" "sa_name" {
@@ -7,7 +8,7 @@ resource "random_string" "sa_name" {
   special = false
   upper   = false
   lower   = true
-  number  = true
+  numeric  = true
 }
 
 resource "azurerm_storage_account" "sa01" {

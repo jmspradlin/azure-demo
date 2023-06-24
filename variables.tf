@@ -5,3 +5,7 @@ variable "sa_name" {
 variable "rg_name" {
   description = "Name of the primary Resource Group"
 }
+
+variable "rg_location" {
+  description = "Location for the Resource Group and Resources"
+}
