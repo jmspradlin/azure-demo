@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "rg01" {
-  name = "adopt-rg01"
+  name = var.rg_name
 }
 
 resource "random_string" "sa_name" {
@@ -11,6 +11,6 @@ resource "random_string" "sa_name" {
 }
 
 resource "azurerm_storage_account" "sa01" {
-  name                = "${var.storage_account.name}${random_string.sa_name.result}"
+  name                = "${var.sa_name}${random_string.sa_name.result}"
   resource_group_name = azurerm_resource_group.rg01.name
 }
