@@ -1,20 +1,16 @@
 terraform {
   cloud {
-    organization = "loudtree"
+    organization = "jeff-spradlin-org"
 
     workspaces {
-      name = "azure-demo"
+      name = "azure-demo-adopt"
     }
   }
 
   required_providers {
-    # aws = {
-    #   source  = "hashicorp/aws"
-    #   version = "4.54.0"
-    # }
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.43.0"
+      version = "~> 3.59.0"
     }
   }
 
