@@ -3,83 +3,6 @@ rg = {
   location = "eastus2"
 }
 env = "dev"
-# AWS resources
-# instance = {
-#   aws1 = {
-#     ami       = "ami-0cc87e5027adcdca8"
-#     type      = "t2.large"
-#     key_name  = "testKey"
-#     subnet_id = "0"
-#     color     = "#B0E0E6"
-#     logo      = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png"
-#   }
-#   aws2 = {
-#     ami       = "ami-0cc87e5027adcdca8"
-#     type      = "t2.large"
-#     key_name  = "testKey"
-#     subnet_id = "1"
-#     color     = "#98FB98"
-#     logo      = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png"
-#   }
-#   aws3 = {
-#     ami       = "ami-0cc87e5027adcdca8"
-#     type      = "t2.large"
-#     key_name  = "testKey"
-#     subnet_id = "2"
-#     color     = "#F0EAD6"
-#     logo      = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png"
-#   }
-# }
-
-# aws_load_balancer = {
-#   name = "lab-alb"
-#   type = "application"
-# }
-# aws_security_groups = {
-#   public = {
-#     name        = "allow_public"
-#     description = "Allow inbound traffic on public subnets"
-#   }
-#   private = {
-#     name        = "allow_private"
-#     description = "Allow HTTP inbound traffic on private subnets"
-#   }
-# }
-# aws_public_rules = {
-#   ingress1 = {
-#     type        = "ingress"
-#     from_port   = 80
-#     to_port     = 80
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
-#   egress1 = {
-#     type             = "egress"
-#     from_port        = 0
-#     to_port          = 0
-#     protocol         = "-1"
-#     cidr_blocks      = ["0.0.0.0/0"]
-#     ipv6_cidr_blocks = ["::/0"]
-#   }
-# }
-
-# aws_private_rules = {
-#   ingress1 = {
-#     type        = "ingress"
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
-#   egress1 = {
-#     type             = "egress"
-#     from_port        = 0
-#     to_port          = 0
-#     protocol         = "-1"
-#     cidr_blocks      = ["0.0.0.0/0"]
-#     ipv6_cidr_blocks = ["::/0"]
-#   }
-# }
 
 # Azure resources
 vnet = {
@@ -114,7 +37,7 @@ azure_load_balancer = {
 azure_linux_vms = {
   azure01 = {
     zone  = "zone1"
-    os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/slalom-sc-rg01/providers/Microsoft.Compute/images/linuxvmtest01"
+    os_id = ""
     size  = "Standard_D2s_v3"
     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
     color = "#008AD7"
