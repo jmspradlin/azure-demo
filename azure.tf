@@ -22,23 +22,23 @@ resource "azurerm_subnet" "subnets" {
 }
 
 # Public IP
-resource "azurerm_public_ip" "pip" {
-  #for_each 
-  name                = var.vnet.public_ip
-  resource_group_name = azurerm_resource_group.rg01.name
-  location            = azurerm_resource_group.rg01.location
-  allocation_method   = "Dynamic"
-}
+# resource "azurerm_public_ip" "pip" {
+#   #for_each 
+#   name                = var.vnet.public_ip
+#   resource_group_name = azurerm_resource_group.rg01.name
+#   location            = azurerm_resource_group.rg01.location
+#   allocation_method   = "Dynamic"
+# }
 
-locals {
-  backend_address_pool_name      = "${azurerm_virtual_network.vnet.name}-beap"
-  frontend_port_name             = "${azurerm_virtual_network.vnet.name}-feport"
-  frontend_ip_configuration_name = "${azurerm_virtual_network.vnet.name}-feip"
-  http_setting_name              = "${azurerm_virtual_network.vnet.name}-be-htst"
-  listener_name                  = "${azurerm_virtual_network.vnet.name}-httplstn"
-  request_routing_rule_name      = "${azurerm_virtual_network.vnet.name}-rqrt"
-  redirect_configuration_name    = "${azurerm_virtual_network.vnet.name}-rdrcfg"
-}
+# locals {
+#   backend_address_pool_name      = "${azurerm_virtual_network.vnet.name}-beap"
+#   frontend_port_name             = "${azurerm_virtual_network.vnet.name}-feport"
+#   frontend_ip_configuration_name = "${azurerm_virtual_network.vnet.name}-feip"
+#   http_setting_name              = "${azurerm_virtual_network.vnet.name}-be-htst"
+#   listener_name                  = "${azurerm_virtual_network.vnet.name}-httplstn"
+#   request_routing_rule_name      = "${azurerm_virtual_network.vnet.name}-rqrt"
+#   redirect_configuration_name    = "${azurerm_virtual_network.vnet.name}-rdrcfg"
+# }
 
 # resource "azurerm_application_gateway" "k8s" {
 #   name                = "${var.env}-${var.rg.name}-agw01"

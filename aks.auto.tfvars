@@ -1,11 +1,11 @@
 rg = {
-  name     = "azure-tfc"
+  name     = "azure-aks"
   location = "eastus2"
 }
 env = "dev"
 node_pool_tags = {
-  default = "true"
-  OS = "Ubuntu"
+  default     = "true"
+  OS          = "Ubuntu"
   environment = "dev"
 }
 
