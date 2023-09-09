@@ -18,3 +18,4 @@ variable "azure_linux_vms" {}
 variable "nsg" {}
 variable "nsg_rules_public" {}
 variable "nsg_rules_private" {}
+variable "node_pool_tags" {}

@@ -4,18 +4,18 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.43.0"
+      version = "~> 3.72.0"
     }
   }
-  required_version = ">= 1.1.0"
+  required_version = ">= 1.4.6"
 
   cloud {
-    organization = ""
+    organization = "jeff-spradlin-org"
 
     workspaces {
-      name = ""
+      name = "azure-demo-aks"
     }
   }
 
-  
+
 }

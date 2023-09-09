@@ -3,31 +3,39 @@ rg = {
   location = "eastus2"
 }
 env = "dev"
+node_pool_tags = {
+  default = "true"
+  OS = "Ubuntu"
+  environment = "dev"
+}
 
 # Azure resources
 vnet = {
   name          = "lab01"
-  address_space = "10.0.2.0/23"
+  address_space = "10.0.0.0/16"
   public_ip     = "loudtreelabstfc"
 }
 subnets = {
-  frontend = {
-    address_prefixes = ["10.0.2.0/27"]
+  private_link = {
+    address_prefixes = ["10.0.255.0/24"]
   },
-  # frontend2 = {
-  #   address_prefixes = ["10.0.2.32/27"]
-  # },
-  # frontend3 = {
-  #   address_prefixes = ["10.0.2.64/27"]
-  # },
-  zone1 = {
-    address_prefixes = ["10.0.3.0/27"]
+  app_gateway_front_end = {
+    address_prefixes = ["10.0.254.0/25"]
   },
-  zone2 = {
-    address_prefixes = ["10.0.3.32/27"]
+  app_gateway_back_end = {
+    address_prefixes = ["10.0.254.128/25"]
   },
-  zone3 = {
-    address_prefixes = ["10.0.3.64/27"]
+  ingress = {
+    address_prefixes = ["10.0.253.0/24"]
+  },
+  default_node_pool = {
+    address_prefixes = ["10.0.0.0/22"]
+  },
+  internal01 = {
+    address_prefixes = ["10.0.4.0/22"]
+  },
+  internal02 = {
+    address_prefixes = ["10.0.8.0/22"]
   },
 }
 azure_load_balancer = {
@@ -42,20 +50,20 @@ azure_linux_vms = {
     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
     color = "#008AD7"
   }
-#   azure02 = {
-#     zone  = "zone2"
-#     os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/linux-packer-image-rg/providers/Microsoft.Compute/images/linuxvmtest02"
-#     size  = "Standard_D2s_v3"
-#     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
-#     color = "#00A2ED"
-#   }
-#   azure03 = {
-#     zone  = "zone3"
-#     os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/linux-packer-image-rg/providers/Microsoft.Compute/images/linuxvmtest03"
-#     size  = "Standard_D2s_v3"
-#     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
-#     color = "#FAF9F6"
-#   }
+  #   azure02 = {
+  #     zone  = "zone2"
+  #     os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/linux-packer-image-rg/providers/Microsoft.Compute/images/linuxvmtest02"
+  #     size  = "Standard_D2s_v3"
+  #     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
+  #     color = "#00A2ED"
+  #   }
+  #   azure03 = {
+  #     zone  = "zone3"
+  #     os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/linux-packer-image-rg/providers/Microsoft.Compute/images/linuxvmtest03"
+  #     size  = "Standard_D2s_v3"
+  #     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
+  #     color = "#FAF9F6"
+  #   }
 }
 nsg = {
   name = "testnsg01"
