@@ -42,29 +42,6 @@ azure_load_balancer = {
   name              = "loudtreelabtfc"
   backend_pool_name = "backendpool"
 }
-azure_linux_vms = {
-  azure01 = {
-    zone  = "zone1"
-    os_id = ""
-    size  = "Standard_D2s_v3"
-    logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
-    color = "#008AD7"
-  }
-  #   azure02 = {
-  #     zone  = "zone2"
-  #     os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/linux-packer-image-rg/providers/Microsoft.Compute/images/linuxvmtest02"
-  #     size  = "Standard_D2s_v3"
-  #     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
-  #     color = "#00A2ED"
-  #   }
-  #   azure03 = {
-  #     zone  = "zone3"
-  #     os_id = "/subscriptions/5bec1c2b-e676-4885-9da2-3de4af44d3a4/resourceGroups/linux-packer-image-rg/providers/Microsoft.Compute/images/linuxvmtest03"
-  #     size  = "Standard_D2s_v3"
-  #     logo  = "https://en.wikipedia.org/wiki/Microsoft_Azure#/media/File:Microsoft_Azure.svg"
-  #     color = "#FAF9F6"
-  #   }
-}
 nsg = {
   name = "testnsg01"
 }
