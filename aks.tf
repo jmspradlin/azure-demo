@@ -9,6 +9,12 @@ resource "azurerm_kubernetes_cluster" "aks" {
     vm_size        = "Standard_B2s"
     vnet_subnet_id = azurerm_subnet.subnets["default_node_pool"].id
   }
+  network_profile {
+    network_plugin = "azure"
+    network_mode   = "bridge"
+    network_policy = "azure"
+    service_cidrs  = azurerm_subnet.subnets["default_node_pool"].address_prefixes
+  }
 
   identity {
     type = "SystemAssigned"
