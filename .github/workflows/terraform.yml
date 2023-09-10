@@ -39,7 +39,7 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
-        run: terraform plan -var-file=dev.tfvars -no-color -input=false
+        run: terraform plan -var-file=aks.auto.tfvars -no-color -input=false
         continue-on-error: true
 
       - name: Update Pull Request
@@ -78,4 +78,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -var-file=dev.tfvars -auto-approve -input=false
+        run: terraform apply -var-file=aks.auto.tfvars -auto-approve -input=false
