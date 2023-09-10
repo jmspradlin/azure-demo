@@ -5,7 +5,8 @@ module "aks" {
   location            = azurerm_resource_group.rg01.location
   prefix              = "${var.env}-${var.rg.name}-01"
   #Identity
-  role_based_access_control_enabled = true
+  role_based_access_control_enabled = false
+  rbac_aad                          = false
 
   #Networking
   vnet_subnet_id                        = azurerm_subnet.subnets["default_node_pool"].id
