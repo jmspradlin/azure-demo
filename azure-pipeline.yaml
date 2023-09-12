@@ -15,7 +15,7 @@ pool:
 steps:
 
 - script: |
-    #export TF_CLI_CONFIG_FILE="$HOME/.terraformrc" 
+    export TF_CLI_CONFIG_FILE="$HOME/.terraformrc" 
       #echo "credentials \"$(TF_ORG_NAME)/$(TF_WORKSPACE_NAME)\" { token = \"$(TF_API_TOKEN)\" }" > "$TF_CLI_CONFIG_FILE"
       echo "credentials \"app.terraform.io\" { token = \"$(TF_API_TOKEN)\" }" > "$TF_CLI_CONFIG_FILE"
 
