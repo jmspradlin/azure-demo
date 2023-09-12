@@ -1,6 +1,6 @@
 module "rg" {
   source  = "app.terraform.io/jeff-spradlin-org/rg/azurerm"
-  version = "1.0.0"
+  version = "1.1.0"
   # insert required variables here
   env = var.env
   rg = var.rg
@@ -20,4 +20,5 @@ provider "azurerm" {
   features {}
 }
 variable "env" {}
-variable "rg" {}
+variable "rg_name" {}
+variable "rg_location" {}
