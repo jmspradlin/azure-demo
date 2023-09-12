@@ -3,7 +3,8 @@ module "rg" {
   version = "1.1.0"
   # insert required variables here
   env = var.env
-  rg = var.rg
+  rg_name = var.rg_name
+  rg_location = var.rg_location
 }
 
 terraform {
