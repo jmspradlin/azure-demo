@@ -15,6 +15,9 @@ terraform {
     }
   }
 }
-
+provider "azurerm" {
+  use_oidc = true
+  features {}
+}
 variable "env" {}
 variable "rg" {}
