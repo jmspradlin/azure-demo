@@ -13,15 +13,10 @@ resource "azurerm_resource_group" "rg01" {
 
 module "storageaccount" {
   source  = "app.terraform.io/jeff-spradlin-org/storageaccount/azurerm"
-  version = "1.2.3"
+  version = "1.3.0"
 
   env     = "dev"
   rg_name = azurerm_resource_group.rg01.name
   sa_name = random_string.sa_name.result
-  network_rules = {
-    basic_loopback = {
-      action = "Allow"
-      rules  = ["127.0.0.1"]
-    }
-  }
+  network_rule_ip_rules = ["127.0.0.1"]
 }
