@@ -1,12 +1,4 @@
 terraform {
-  cloud {
-    organization = "jeff-spradlin-org"
-
-    workspaces {
-      name = "azure-demo-adopt"
-    }
-  }
-
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -15,4 +7,11 @@ terraform {
   }
 
   required_version = ">= 1.1.0"
+  cloud {
+    organization = "jeff-spradlin-org"
+
+    workspaces {
+      name = "azure-demo-standardize"
+    }
+  }
 }
