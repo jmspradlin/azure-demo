@@ -15,9 +15,9 @@ module "storageaccount" {
   source  = "app.terraform.io/jeff-spradlin-org/storageaccount/azurerm"
   version = "1.3.1"
 
-  env     = "dev"
+  env     = var.env
   rg_name = azurerm_resource_group.rg01.name
   sa_name = random_string.sa_name.result
   network_rule_ip_rules = ["127.0.0.1"]
-  account_replication_type = "LRS"
+  account_replication_type = var.sa_account_replication_type
 }
