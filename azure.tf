@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "rg01" {
 
 module "storageaccount" {
   source  = "app.terraform.io/jeff-spradlin-org/storageaccount/azurerm"
-  version = "1.3.0"
+  version = "1.3.1"
 
   env     = "dev"
   rg_name = azurerm_resource_group.rg01.name
